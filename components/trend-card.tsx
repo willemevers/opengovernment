@@ -1,9 +1,10 @@
 "use client"
 
 import { useId } from "react"
+import { LOCALE, UI, type Lang } from "@/lib/i18n"
 import { Area, AreaChart, CartesianGrid, Line, ReferenceArea, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
 
-// "Maximaal" always starts here, so every chart shares the same time axis.
+// "Max" range always starts here, so every chart shares the same time axis.
 const START_YEAR = 1980
 
 export type Row = { year: string; [key: string]: string | number | null }
@@ -24,6 +25,7 @@ type Props = {
   unit?: string
   source: { label: string; href: string }
   range: "10" | "max"
+  lang: Lang
 }
 
 const COLORS = ["var(--chart-1)", "var(--muted-foreground)"]
@@ -38,9 +40,9 @@ function firstValue(data: Row[], key: string) {
   return row ? { year: row.year, value: row[key] as number } : null
 }
 
-const pct = new Intl.NumberFormat("nl-NL", { style: "percent", maximumFractionDigits: 0, signDisplay: "exceptZero" })
-
-export function TrendCard({ title, description, data: allData, series, unit, source, range }: Props) {
+export function TrendCard({ title, description, data: allData, series, unit, source, range, lang }: Props) {
+  const t = UI[lang]
+  const pct = new Intl.NumberFormat(LOCALE[lang], { style: "percent", maximumFractionDigits: 0, signDisplay: "exceptZero" })
   const gradientId = useId()
   const [main] = series
   // Every year in the range gets a row; years without data stay empty so gaps are visible.
@@ -68,10 +70,10 @@ export function TrendCard({ title, description, data: allData, series, unit, sou
         <div className="mt-5 flex flex-wrap items-baseline gap-x-2 gap-y-1">
           <span className="text-3xl font-semibold tracking-tight tabular-nums">{main.format(latest.value)}</span>
           {unit && <span className="text-sm text-muted-foreground">{unit}</span>}
-          <span className="text-sm text-muted-foreground">in {latest.year}</span>
+          <span className="text-sm text-muted-foreground">{t.in} {latest.year}</span>
           {first && first.year !== latest.year && (
             <span title={`${first.year}: ${main.format(first.value)}`} className="ml-auto rounded-full bg-muted px-2.5 py-0.5 text-xs text-muted-foreground tabular-nums">
-              {pct.format(latest.value / first.value - 1)} sinds {first.year}
+              {pct.format(latest.value / first.value - 1)} {t.since} {first.year}
             </span>
           )}
         </div>
@@ -96,7 +98,7 @@ export function TrendCard({ title, description, data: allData, series, unit, sou
                 fillOpacity={0.6}
                 stroke="none"
                 ifOverflow="extendDomain"
-                label={{ value: "Geen cijfers", position: "center", fontSize: 12, fill: "var(--muted-foreground)" }}
+                label={{ value: t.noData, position: "center", fontSize: 12, fill: "var(--muted-foreground)" }}
               />
             )}
             <XAxis
@@ -167,7 +169,7 @@ export function TrendCard({ title, description, data: allData, series, unit, sou
             </span>
           ))}
         <a href={source.href} target="_blank" rel="noopener noreferrer" className="ml-auto hover:text-foreground hover:underline">
-          Bron: {source.label}
+          {t.source}: {source.label}
         </a>
       </div>
     </section>

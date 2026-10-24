@@ -31,13 +31,17 @@ const rows = (cols) => {
 }
 const map = (o, f) => Object.fromEntries(Object.entries(o).map(([k, v]) => [k, f(v, k)]))
 
-const [gdp, gdpPerCapita, debtPct, immigration, asylum, crime, housePrice, wage] = await Promise.all([
+const crimeType = (key) => cbs("83648NED", "TotaalGeregistreerdeMisdrijven_1", `RegioS eq 'NL01  ' and SoortMisdrijf eq '${key}'`)
+
+const [gdp, gdpPerCapita, debtPct, immigration, asylum, crime, homicide, rape, housePrice, wage] = await Promise.all([
   worldBank("NY.GDP.MKTP.CN"), // € (pre-2002 converted from guilders)
   worldBank("NY.GDP.PCAP.CN"),
   imf("GG_DEBT_GDP"), // IMF historical public debt, % of GDP
   cbs("85496NED", "Immigratie_71"),
   cbs("80059ned", "TotaalAsielverzoekenEnNareizigers_1", "Nationaliteit eq 'T001059  '"),
   cbs("83723NED", "MisdrijvenTotaal_7"),
+  crimeType("CRI3400"), // levensmisdrijf: moord en doodslag, incl. pogingen (registered from 2010)
+  crimeType("CRI3320"), // verkrachting
   cbs("83625NED", "GemiddeldeVerkoopprijs_1", "RegioS eq 'NL01  '"),
   // Median gross wage of people whose main income is employment ("SEC: werknemer"), x1000 €
   cbs("84494NED", "MediaanInkomen_5", "Geslacht eq 'T001038' and KenmerkenVanPersonen eq '2017551' and Inkomensbestanddelen eq 'A047878'"),
@@ -51,7 +55,10 @@ const data = {
     debtAmount: Object.fromEntries(Object.entries(debtPct).filter(([y]) => gdpBn[y]).map(([y, p]) => [y, round((p / 100) * gdpBn[y])])),
   }),
   migrants: rows({ immigration, asylum }),
-  crime: rows({ value: map(crime, (v) => round(v, 1)) }),
+  crime: rows({
+    value: map(crime, (v) => round(v, 1)),
+    murderRape: Object.fromEntries(Object.entries(homicide).filter(([y]) => rape[y] != null).map(([y, v]) => [y, v + rape[y]])),
+  }),
   housing: rows({
     ratio: Object.fromEntries(Object.entries(wage).filter(([y]) => housePrice[y]).map(([y, w]) => [y, round(housePrice[y] / (w * 1000), 2)])),
     price: housePrice,

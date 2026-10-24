@@ -2,11 +2,8 @@
 
 import { useState } from "react"
 import { TrendCard, type Row } from "@/components/trend-card"
+import { CARDS, LOCALE, UI, type Lang } from "@/lib/i18n"
 import data from "@/lib/data.json"
-
-const nf = new Intl.NumberFormat("nl-NL", { maximumFractionDigits: 1 })
-const euro = (v: number) => `€${nf.format(v)}`
-const thousands = (v: number) => nf.format(Math.round(v * 1000))
 
 // x1000. Totaal = Rijk + Gemeenten + Provincies + Waterschappen + Gem. Regelingen + Rechterlijke Macht + Defensie + Politie
 // (kennisvandeoverheid.nl, geen API; reeks begint in 2015). 2024: alleen Rijk bekend.
@@ -23,29 +20,32 @@ const civilServants: Row[] = [
   { year: "2024", rijk: 157.0, total: null },
 ]
 
-const RANGES = [
-  { value: "10", label: "Laatste 10 jaar" },
-  { value: "max", label: "Maximaal" },
-] as const
-
-export function MetricsGrid() {
+export function MetricsGrid({ lang }: { lang: Lang }) {
   const [range, setRange] = useState<"10" | "max">("10")
+  const t = UI[lang]
+  const c = CARDS[lang]
+  const nf = new Intl.NumberFormat(LOCALE[lang], { maximumFractionDigits: 1 })
+  const num = (v: number) => nf.format(v)
+  const euro = (v: number) => `€${nf.format(v)}`
+  const euroBn = (v: number) => `${euro(v)} ${t.bn}`
+  const thousands = (v: number) => nf.format(Math.round(v * 1000))
+  const common = { range, lang }
 
   return (
     <>
       <div className="mb-4 flex justify-end sm:mb-6">
-        <div role="group" aria-label="Periode" className="inline-flex rounded-lg border bg-card p-0.5 text-sm">
-          {RANGES.map((r) => (
+        <div role="group" aria-label={t.period} className="inline-flex rounded-lg border bg-card p-0.5 text-sm">
+          {(["10", "max"] as const).map((r) => (
             <button
-              key={r.value}
+              key={r}
               type="button"
-              aria-pressed={range === r.value}
-              onClick={() => setRange(r.value)}
+              aria-pressed={range === r}
+              onClick={() => setRange(r)}
               className={`rounded-md px-3 py-1.5 font-medium transition-colors ${
-                range === r.value ? "bg-foreground text-background" : "text-muted-foreground hover:text-foreground"
+                range === r ? "bg-foreground text-background" : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              {r.label}
+              {r === "10" ? t.last10 : t.max}
             </button>
           ))}
         </div>
@@ -53,73 +53,67 @@ export function MetricsGrid() {
 
       <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2">
         <TrendCard
-          range={range}
-          title="Bruto Binnenlands Product"
-          description="Wat Nederland in een jaar verdient, in totaal en per inwoner."
+          {...common}
+          {...c.gdp}
           data={data.gdp}
           series={[
-            { key: "value", label: "BBP", format: (v) => `${euro(v)} mld` },
-            { key: "perCapita", label: "Per inwoner", ownScale: true, format: euro },
+            { key: "value", label: c.gdp.labels[0], format: euroBn },
+            { key: "perCapita", label: c.gdp.labels[1]!, ownScale: true, format: euro },
           ]}
           source={{ label: "World Bank", href: "https://data.worldbank.org/indicator/NY.GDP.MKTP.CN?locations=NL" }}
         />
         <TrendCard
-          range={range}
-          title="Staatsschuld"
-          description="Hoeveel de overheid geleend heeft, als deel van de economie en in euro's."
+          {...common}
+          {...c.debt}
           data={data.debt}
           series={[
-            { key: "debtPercent", label: "% van BBP", format: (v) => `${nf.format(v)}%` },
-            { key: "debtAmount", label: "In euro's", ownScale: true, format: (v) => `${euro(v)} mld` },
+            { key: "debtPercent", label: c.debt.labels[0], format: (v) => `${num(v)}%` },
+            { key: "debtAmount", label: c.debt.labels[1]!, ownScale: true, format: euroBn },
           ]}
           source={{ label: "IMF", href: "https://www.imf.org/external/datamapper/GG_DEBT_GDP@HPDD/NLD" }}
         />
         <TrendCard
-          range={range}
-          title="Hoe groot is de overheid?"
-          description="Aantal mensen dat bij de overheid werkt, en hoeveel daarvan bij het Rijk."
+          {...common}
+          {...c.civil}
           data={civilServants}
           series={[
-            { key: "total", label: "Hele overheid", format: thousands },
-            { key: "rijk", label: "Rijk", format: thousands },
+            { key: "total", label: c.civil.labels[0], format: thousands },
+            { key: "rijk", label: c.civil.labels[1]!, format: thousands },
           ]}
-          unit="medewerkers"
           source={{
             label: "Kennis van de Overheid",
             href: "https://www.kennisvandeoverheid.nl/cijfers-overheidspersoneel/omvang-en-samenstelling-personeelsbestand",
           }}
         />
         <TrendCard
-          range={range}
-          title="Aantal migranten"
-          description="Hoeveel mensen per jaar naar Nederland komen, en hoeveel daarvan asiel aanvragen."
+          {...common}
+          {...c.migrants}
           data={data.migrants}
           series={[
-            { key: "immigration", label: "Alle immigranten", format: (v) => nf.format(v) },
-            { key: "asylum", label: "Asielverzoeken", format: (v) => nf.format(v) },
+            { key: "immigration", label: c.migrants.labels[0], format: num },
+            { key: "asylum", label: c.migrants.labels[1]!, format: num },
           ]}
-          unit="mensen"
           source={{ label: "CBS", href: "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/80059ned/table" }}
         />
         <TrendCard
-          range={range}
-          title="Veiligheid"
-          description="Geregistreerde misdrijven per 1.000 inwoners. Lager is veiliger."
+          {...common}
+          {...c.crime}
           data={data.crime}
-          series={[{ key: "value", label: "Misdrijven", format: (v) => nf.format(v) }]}
-          unit="per 1.000 inwoners"
-          source={{ label: "CBS", href: "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/83723NED/table" }}
+          series={[
+            { key: "value", label: c.crime.labels[0], format: num },
+            // Registered "levensmisdrijven" (incl. attempts) + rapes, CBS 83648NED, from 2010
+            { key: "murderRape", label: c.crime.labels[1]!, ownScale: true, format: num },
+          ]}
+          source={{ label: "CBS", href: "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/83648NED/table" }}
         />
         <TrendCard
-          range={range}
-          title="Betaalbaar wonen"
-          description="Hoeveel jaarsalarissen een gemiddeld huis kost."
+          {...common}
+          {...c.housing}
           data={data.housing}
           series={[
-            { key: "ratio", label: "Jaarsalarissen", format: (v) => `${nf.format(v)}×` },
-            { key: "price", label: "Gemiddelde huisprijs", ownScale: true, format: euro },
+            { key: "ratio", label: c.housing.labels[0], format: (v) => `${num(v)}×` },
+            { key: "price", label: c.housing.labels[1]!, ownScale: true, format: euro },
           ]}
-          unit="mediaan bruto jaarloon"
           source={{ label: "CBS", href: "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/83625NED/table" }}
         />
       </div>
