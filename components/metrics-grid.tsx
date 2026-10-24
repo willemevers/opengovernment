@@ -50,19 +50,54 @@ const civilServants: Row[] = [
   { year: "2024", rijk: 157.0, total: null },
 ]
 
-// x1000
+// Totale immigratie (CBS 85496NED) en asielverzoeken incl. nareizigers (CBS 80059ned)
 const migrants: Row[] = [
-  { year: "2014", value: 24.5 },
-  { year: "2015", value: 43.1 },
-  { year: "2016", value: 31.6 },
-  { year: "2017", value: 31.5 },
-  { year: "2018", value: 24.2 },
-  { year: "2019", value: 23.6 },
-  { year: "2020", value: 15.2 },
-  { year: "2021", value: 28.8 },
-  { year: "2022", value: 46.4 },
-  { year: "2023", value: 56.0 },
-  { year: "2024", value: 54.0 },
+  { year: "1980", immigration: 112504, asylum: 1330 },
+  { year: "1981", immigration: 80183, asylum: 750 },
+  { year: "1982", immigration: 70740, asylum: 1215 },
+  { year: "1983", immigration: 66762, asylum: 2015 },
+  { year: "1984", immigration: 66907, asylum: 2605 },
+  { year: "1985", immigration: 79362, asylum: 5645 },
+  { year: "1986", immigration: 87387, asylum: 5865 },
+  { year: "1987", immigration: 95935, asylum: 13460 },
+  { year: "1988", immigration: 91238, asylum: 7485 },
+  { year: "1989", immigration: 98914, asylum: 13900 },
+  { year: "1990", immigration: 117350, asylum: 21210 },
+  { year: "1991", immigration: 120249, asylum: 21615 },
+  { year: "1992", immigration: 116926, asylum: 20345 },
+  { year: "1993", immigration: 119154, asylum: 35400 },
+  { year: "1994", immigration: 99311, asylum: 52575 },
+  { year: "1995", immigration: 96099, asylum: 29260 },
+  { year: "1996", immigration: 108749, asylum: 22855 },
+  { year: "1997", immigration: 109860, asylum: 34445 },
+  { year: "1998", immigration: 122407, asylum: 45215 },
+  { year: "1999", immigration: 119151, asylum: 39305 },
+  { year: "2000", immigration: 132850, asylum: 43560 },
+  { year: "2001", immigration: 133404, asylum: 32580 },
+  { year: "2002", immigration: 121250, asylum: 18665 },
+  { year: "2003", immigration: 104514, asylum: 13400 },
+  { year: "2004", immigration: 94019, asylum: 9780 },
+  { year: "2005", immigration: 92297, asylum: 12345 },
+  { year: "2006", immigration: 101150, asylum: 14465 },
+  { year: "2007", immigration: 116819, asylum: 9730 },
+  { year: "2008", immigration: 143516, asylum: 15275 },
+  { year: "2009", immigration: 146378, asylum: 16165 },
+  { year: "2010", immigration: 154432, asylum: 15155 },
+  { year: "2011", immigration: 162962, asylum: 14630 },
+  { year: "2012", immigration: 158374, asylum: 13170 },
+  { year: "2013", immigration: 164772, asylum: 16725 },
+  { year: "2014", immigration: 182949, asylum: 29890 },
+  { year: "2015", immigration: 204615, asylum: 58880 },
+  { year: "2016", immigration: 230739, asylum: 32840 },
+  { year: "2017", immigration: 234957, asylum: 32755 },
+  { year: "2018", immigration: 243737, asylum: 30540 },
+  { year: "2019", immigration: 269064, asylum: 29445 },
+  { year: "2020", immigration: 220853, asylum: 19180 },
+  { year: "2021", immigration: 252528, asylum: 36675 },
+  { year: "2022", immigration: 403108, asylum: 47990 },
+  { year: "2023", immigration: 335668, asylum: 49890 },
+  { year: "2024", immigration: 316305, asylum: 45640 },
+  { year: "2025", immigration: 308357, asylum: 42360 },
 ]
 
 const crime: Row[] = [
@@ -136,11 +171,14 @@ export function MetricsGrid() {
       />
       <TrendCard
         title="Aantal migranten"
-        description="Aantal asielmigranten dat per jaar naar Nederland komt."
+        description="Hoeveel mensen per jaar naar Nederland komen, en hoeveel daarvan asiel aanvragen."
         data={migrants}
-        series={[{ key: "value", label: "Asielmigranten", format: thousands }]}
+        series={[
+          { key: "immigration", label: "Alle immigranten", format: (v) => nf.format(v) },
+          { key: "asylum", label: "Asielverzoeken", format: (v) => nf.format(v) },
+        ]}
         unit="mensen"
-        source={{ label: "CBS", href: "https://datasets.cbs.nl/odata/v1/CBS/85496NED" }}
+        source={{ label: "CBS", href: "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/80059ned/table" }}
       />
       <TrendCard
         title="Veiligheid"
