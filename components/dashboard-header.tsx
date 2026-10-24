@@ -11,13 +11,21 @@ export function DashboardHeader({ lang }: { lang: Lang }) {
             <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-balance">{t.title} 🇳🇱</h1>
             <p className="mt-1 text-xs sm:text-sm text-muted-foreground">{t.subtitle}</p>
           </div>
-          <Link
-            href={t.switchHref}
-            hrefLang={lang === "nl" ? "en" : "nl"}
-            className="shrink-0 rounded-lg border px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-          >
-            {t.switchLabel}
-          </Link>
+          <nav aria-label="Language" className="inline-flex shrink-0 rounded-lg border bg-card p-0.5 text-sm">
+            {(["nl", "en"] as const).map((l) => (
+              <Link
+                key={l}
+                href={l === "nl" ? "/" : "/en"}
+                hrefLang={l}
+                aria-current={l === lang ? "page" : undefined}
+                className={`rounded-md px-3 py-1.5 font-medium uppercase transition-colors ${
+                  l === lang ? "bg-foreground text-background" : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {l}
+              </Link>
+            ))}
+          </nav>
         </div>
       </div>
     </header>

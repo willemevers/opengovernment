@@ -8,8 +8,6 @@ export const UI = {
     subtitle: "Hoe goed doen we het eigenlijk? De belangrijkste indicatoren, zo ver terug als de cijfers gaan",
     metaDescription:
       "Hoe goed doen we het eigenlijk? Economie, staatsschuld, migratie, veiligheid en wonen in Nederland, in heldere grafieken met officiële cijfers.",
-    switchLabel: "English",
-    switchHref: "/en",
     period: "Periode",
     last10: "Laatste 10 jaar",
     max: "Maximaal",
@@ -31,8 +29,6 @@ export const UI = {
     subtitle: "How is the Netherlands really doing? The key indicators, as far back as the data goes",
     metaDescription:
       "How is the Netherlands really doing? Economy, national debt, migration, safety and housing, in clear charts with official data.",
-    switchLabel: "Nederlands",
-    switchHref: "/",
     period: "Period",
     last10: "Last 10 years",
     max: "Maximum",
