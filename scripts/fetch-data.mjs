@@ -33,13 +33,14 @@ const map = (o, f) => Object.fromEntries(Object.entries(o).map(([k, v]) => [k, f
 
 const crimeType = (key) => cbs("83648NED", "TotaalGeregistreerdeMisdrijven_1", `RegioS eq 'NL01  ' and SoortMisdrijf eq '${key}'`)
 
-const [gdp, gdpPerCapita, debtPct, immigration, asylum, crime, homicide, rape, housePrice, wage] = await Promise.all([
+const [gdp, gdpPerCapita, debtPct, immigration, population, asylum, crime, homicide, rape, housePrice, wage] = await Promise.all([
   worldBank("NY.GDP.MKTP.CN"), // € (pre-2002 converted from guilders)
   worldBank("NY.GDP.PCAP.CN"),
   imf("GG_DEBT_GDP"), // IMF historical public debt, % of GDP
   cbs("85496NED", "Immigratie_71"),
+  cbs("85496NED", "TotaleBevolking_1"), // population on 1 January
   cbs("80059ned", "TotaalAsielverzoekenEnNareizigers_1", "Nationaliteit eq 'T001059  '"),
-  cbs("83723NED", "MisdrijvenTotaal_7"),
+  cbs("83723NED", "MisdrijvenTotaal_1"),
   crimeType("CRI3400"), // levensmisdrijf: moord en doodslag, incl. pogingen (registered from 2010)
   crimeType("CRI3320"), // verkrachting
   cbs("83625NED", "GemiddeldeVerkoopprijs_1", "RegioS eq 'NL01  '"),
@@ -55,9 +56,14 @@ const data = {
     debtAmount: Object.fromEntries(Object.entries(debtPct).filter(([y]) => gdpBn[y]).map(([y, p]) => [y, round((p / 100) * gdpBn[y])])),
   }),
   migrants: rows({ immigration, asylum }),
+  // Both per 100,000 residents
   crime: rows({
-    value: map(crime, (v) => round(v, 1)),
-    murderRape: Object.fromEntries(Object.entries(homicide).filter(([y]) => rape[y] != null).map(([y, v]) => [y, v + rape[y]])),
+    value: Object.fromEntries(Object.entries(crime).filter(([y]) => population[y]).map(([y, v]) => [y, round((v / population[y]) * 1e5)])),
+    murderRape: Object.fromEntries(
+      Object.entries(homicide)
+        .filter(([y]) => rape[y] != null && population[y])
+        .map(([y, v]) => [y, round(((v + rape[y]) / population[y]) * 1e5, 1)]),
+    ),
   }),
   housing: rows({
     ratio: Object.fromEntries(Object.entries(wage).filter(([y]) => housePrice[y]).map(([y, w]) => [y, round(housePrice[y] / (w * 1000), 2)])),

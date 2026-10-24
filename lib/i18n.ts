@@ -56,7 +56,7 @@ export const CARDS: Record<Lang, Record<CardId, CardText>> = {
     debt: { title: "Staatsschuld", description: "Hoeveel de overheid geleend heeft, als deel van de economie en in euro's.", labels: ["% van BBP", "In euro's"] },
     civil: { title: "Hoe groot is de overheid?", description: "Aantal mensen dat bij de overheid werkt, en hoeveel daarvan bij het Rijk.", labels: ["Hele overheid", "Rijk"], unit: "medewerkers" },
     migrants: { title: "Aantal migranten", description: "Hoeveel mensen per jaar naar Nederland komen, en hoeveel daarvan asiel aanvragen.", labels: ["Alle immigranten", "Asielverzoeken"], unit: "mensen" },
-    crime: { title: "Veiligheid", description: "Geregistreerde misdrijven per 1.000 inwoners, en het aantal moorden en verkrachtingen. Lager is veiliger.", labels: ["Alle misdrijven", "Moord, doodslag en verkrachting"], unit: "per 1.000 inwoners" },
+    crime: { title: "Veiligheid", description: "Geregistreerde misdrijven, en moorden en verkrachtingen, per 100.000 inwoners. Lager is veiliger.", labels: ["Alle misdrijven", "Moord, doodslag en verkrachting"], unit: "per 100.000 inwoners" },
     housing: { title: "Betaalbaar wonen", description: "Hoeveel jaarsalarissen een gemiddeld huis kost.", labels: ["Jaarsalarissen", "Gemiddelde huisprijs"], unit: "mediaan bruto jaarloon" },
   },
   en: {
@@ -64,7 +64,7 @@ export const CARDS: Record<Lang, Record<CardId, CardText>> = {
     debt: { title: "National debt", description: "How much the government has borrowed, as a share of the economy and in euros.", labels: ["% of GDP", "In euros"] },
     civil: { title: "How big is the government?", description: "Number of people working for the government, and how many of them for central government.", labels: ["All government", "Central government"], unit: "employees" },
     migrants: { title: "Migration", description: "How many people move to the Netherlands each year, and how many of them apply for asylum.", labels: ["All immigrants", "Asylum applications"], unit: "people" },
-    crime: { title: "Safety", description: "Registered crimes per 1,000 residents, and the number of murders and rapes. Lower is safer.", labels: ["All crimes", "Murder, manslaughter and rape"], unit: "per 1,000 residents" },
+    crime: { title: "Safety", description: "Registered crimes, and murders and rapes, per 100,000 residents. Lower is safer.", labels: ["All crimes", "Murder, manslaughter and rape"], unit: "per 100,000 residents" },
     housing: { title: "Housing affordability", description: "How many annual salaries an average house costs.", labels: ["Annual salaries", "Average house price"], unit: "median gross salary" },
   },
 }

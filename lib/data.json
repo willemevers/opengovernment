@@ -693,233 +693,233 @@
  "crime": [
   {
    "year": "1980",
-   "value": 54,
+   "value": 5375,
    "murderRape": null
   },
   {
    "year": "1981",
-   "value": 61,
+   "value": 6140,
    "murderRape": null
   },
   {
    "year": "1982",
-   "value": 69,
+   "value": 6934,
    "murderRape": null
   },
   {
    "year": "1983",
-   "value": 74,
+   "value": 7387,
    "murderRape": null
   },
   {
    "year": "1984",
-   "value": 81,
+   "value": 8083,
    "murderRape": null
   },
   {
    "year": "1985",
-   "value": 81,
+   "value": 8124,
    "murderRape": null
   },
   {
    "year": "1986",
-   "value": 81,
+   "value": 8111,
    "murderRape": null
   },
   {
    "year": "1987",
-   "value": 83,
+   "value": 8299,
    "murderRape": null
   },
   {
    "year": "1988",
-   "value": 84,
+   "value": 8367,
    "murderRape": null
   },
   {
    "year": "1989",
-   "value": 84,
+   "value": 8410,
    "murderRape": null
   },
   {
    "year": "1990",
-   "value": 83,
+   "value": 8296,
    "murderRape": null
   },
   {
    "year": "1991",
-   "value": 85,
+   "value": 8453,
    "murderRape": null
   },
   {
    "year": "1992",
-   "value": 90,
+   "value": 9004,
    "murderRape": null
   },
   {
    "year": "1993",
-   "value": 90,
+   "value": 8967,
    "murderRape": null
   },
   {
    "year": "1994",
-   "value": 92,
+   "value": 9195,
    "murderRape": null
   },
   {
    "year": "1995",
-   "value": 85,
+   "value": 8539,
    "murderRape": null
   },
   {
    "year": "1996",
-   "value": 82,
+   "value": 8224,
    "murderRape": null
   },
   {
    "year": "1997",
-   "value": 84,
+   "value": 8413,
    "murderRape": null
   },
   {
    "year": "1998",
-   "value": 85,
+   "value": 8469,
    "murderRape": null
   },
   {
    "year": "1999",
-   "value": 89,
+   "value": 8882,
    "murderRape": null
   },
   {
    "year": "2000",
-   "value": 90,
+   "value": 8993,
    "murderRape": null
   },
   {
    "year": "2001",
-   "value": 93,
+   "value": 9267,
    "murderRape": null
   },
   {
    "year": "2002",
-   "value": 93,
+   "value": 9346,
    "murderRape": null
   },
   {
    "year": "2003",
-   "value": 91,
+   "value": 9083,
    "murderRape": null
   },
   {
    "year": "2004",
-   "value": 87,
+   "value": 8716,
    "murderRape": null
   },
   {
    "year": "2005",
-   "value": 83,
+   "value": 8269,
    "murderRape": null
   },
   {
    "year": "2006",
-   "value": 80,
+   "value": 8031,
    "murderRape": null
   },
   {
    "year": "2007",
-   "value": 80,
+   "value": 7971,
    "murderRape": null
   },
   {
    "year": "2008",
-   "value": 78,
+   "value": 7789,
    "murderRape": null
   },
   {
    "year": "2009",
-   "value": 76,
+   "value": 7609,
    "murderRape": null
   },
   {
    "year": "2010",
-   "value": 72,
-   "murderRape": 5750
+   "value": 7245,
+   "murderRape": 34.7
   },
   {
    "year": "2011",
-   "value": 72,
-   "murderRape": 5800
+   "value": 7244,
+   "murderRape": 34.8
   },
   {
    "year": "2012",
-   "value": 69,
-   "murderRape": 5340
+   "value": 6903,
+   "murderRape": 31.9
   },
   {
    "year": "2013",
-   "value": 66,
-   "murderRape": 4770
+   "value": 6589,
+   "murderRape": 28.4
   },
   {
    "year": "2014",
-   "value": 61,
-   "murderRape": 4590
+   "value": 6094,
+   "murderRape": 27.3
   },
   {
    "year": "2015",
-   "value": 58,
-   "murderRape": 4520
+   "value": 5792,
+   "murderRape": 26.7
   },
   {
    "year": "2016",
-   "value": 55,
-   "murderRape": 4655
+   "value": 5479,
+   "murderRape": 27.4
   },
   {
    "year": "2017",
-   "value": 49,
-   "murderRape": 4770
+   "value": 4876,
+   "murderRape": 27.9
   },
   {
    "year": "2018",
-   "value": 46,
-   "murderRape": 4810
+   "value": 4577,
+   "murderRape": 28
   },
   {
    "year": "2019",
-   "value": 48,
-   "murderRape": 4715
+   "value": 4756,
+   "murderRape": 27.3
   },
   {
    "year": "2020",
-   "value": 47,
-   "murderRape": 4815
+   "value": 4671,
+   "murderRape": 27.7
   },
   {
    "year": "2021",
-   "value": 43,
-   "murderRape": 5140
+   "value": 4338,
+   "murderRape": 29.4
   },
   {
    "year": "2022",
-   "value": 46,
-   "murderRape": 5750
+   "value": 4608,
+   "murderRape": 32.7
   },
   {
    "year": "2023",
-   "value": 46,
-   "murderRape": 5045
+   "value": 4584,
+   "murderRape": 28.3
   },
   {
    "year": "2024",
-   "value": 45,
-   "murderRape": 5250
+   "value": 4547,
+   "murderRape": 29.3
   },
   {
    "year": "2025",
-   "value": 45,
-   "murderRape": 5465
+   "value": 4523,
+   "murderRape": 30.3
   }
  ],
  "housing": [
