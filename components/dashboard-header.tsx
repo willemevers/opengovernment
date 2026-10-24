@@ -7,7 +7,7 @@ export function DashboardHeader() {
             <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-balance">
               Nederlandse Overheid Dashboard 🇳🇱
             </h1>
-            <p className="mt-1 text-xs sm:text-sm text-muted-foreground">Hoe goed doen we het eigenlijk? Hierbij de belangrijkste indicatoren van 2015 t/m 2024</p>
+            <p className="mt-1 text-xs sm:text-sm text-muted-foreground">Hoe goed doen we het eigenlijk? De belangrijkste indicatoren, zo ver terug als de cijfers gaan</p>
           </div>
         </div>
       </div>

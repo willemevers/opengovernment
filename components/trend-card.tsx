@@ -20,6 +20,7 @@ type Props = {
   series: [Series] | [Series, Series]
   unit?: string
   source: { label: string; href: string }
+  range: "10" | "max"
 }
 
 const COLORS = ["var(--chart-1)", "var(--muted-foreground)"]
@@ -34,9 +35,14 @@ function firstValue(data: Row[], key: string) {
   return row ? { year: row.year, value: row[key] as number } : null
 }
 
-export function TrendCard({ title, description, data, series, unit, source }: Props) {
+const pct = new Intl.NumberFormat("nl-NL", { style: "percent", maximumFractionDigits: 0, signDisplay: "exceptZero" })
+
+export function TrendCard({ title, description, data: allData, series, unit, source, range }: Props) {
   const gradientId = useId()
   const [main] = series
+  // Only years where at least one series has data, optionally cut to the last 10 of those.
+  const withData = allData.filter((r) => series.some((s) => r[s.key] != null))
+  const data = range === "10" ? withData.slice(-10) : withData
   const latest = lastValue(data, main.key)
   const first = firstValue(data, main.key)
   const years = [data[0].year, data[data.length - 1].year]
@@ -52,8 +58,8 @@ export function TrendCard({ title, description, data, series, unit, source }: Pr
           {unit && <span className="text-sm text-muted-foreground">{unit}</span>}
           <span className="text-sm text-muted-foreground">in {latest.year}</span>
           {first && first.year !== latest.year && (
-            <span className="ml-auto rounded-full bg-muted px-2.5 py-0.5 text-xs text-muted-foreground tabular-nums">
-              {first.year}: {main.format(first.value)}
+            <span title={`${first.year}: ${main.format(first.value)}`} className="ml-auto rounded-full bg-muted px-2.5 py-0.5 text-xs text-muted-foreground tabular-nums">
+              {pct.format(latest.value / first.value - 1)} sinds {first.year}
             </span>
           )}
         </div>

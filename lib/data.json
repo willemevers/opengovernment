@@ -1,0 +1,1111 @@
+{
+ "gdp": [
+  {
+   "year": "1980",
+   "value": 176,
+   "perCapita": 12461
+  },
+  {
+   "year": "1981",
+   "value": 186,
+   "perCapita": 13064
+  },
+  {
+   "year": "1982",
+   "value": 192,
+   "perCapita": 13436
+  },
+  {
+   "year": "1983",
+   "value": 199,
+   "perCapita": 13852
+  },
+  {
+   "year": "1984",
+   "value": 210,
+   "perCapita": 14548
+  },
+  {
+   "year": "1985",
+   "value": 217,
+   "perCapita": 14983
+  },
+  {
+   "year": "1986",
+   "value": 224,
+   "perCapita": 15347
+  },
+  {
+   "year": "1987",
+   "value": 226,
+   "perCapita": 15382
+  },
+  {
+   "year": "1988",
+   "value": 235,
+   "perCapita": 15938
+  },
+  {
+   "year": "1989",
+   "value": 249,
+   "perCapita": 16766
+  },
+  {
+   "year": "1990",
+   "value": 263,
+   "perCapita": 17619
+  },
+  {
+   "year": "1991",
+   "value": 278,
+   "perCapita": 18465
+  },
+  {
+   "year": "1992",
+   "value": 290,
+   "perCapita": 19103
+  },
+  {
+   "year": "1993",
+   "value": 298,
+   "perCapita": 19516
+  },
+  {
+   "year": "1994",
+   "value": 314,
+   "perCapita": 20385
+  },
+  {
+   "year": "1995",
+   "value": 330,
+   "perCapita": 21349
+  },
+  {
+   "year": "1996",
+   "value": 345,
+   "perCapita": 22234
+  },
+  {
+   "year": "1997",
+   "value": 370,
+   "perCapita": 23680
+  },
+  {
+   "year": "1998",
+   "value": 395,
+   "perCapita": 25137
+  },
+  {
+   "year": "1999",
+   "value": 420,
+   "perCapita": 26571
+  },
+  {
+   "year": "2000",
+   "value": 452,
+   "perCapita": 28394
+  },
+  {
+   "year": "2001",
+   "value": 483,
+   "perCapita": 30097
+  },
+  {
+   "year": "2002",
+   "value": 503,
+   "perCapita": 31141
+  },
+  {
+   "year": "2003",
+   "value": 515,
+   "perCapita": 31734
+  },
+  {
+   "year": "2004",
+   "value": 532,
+   "perCapita": 32648
+  },
+  {
+   "year": "2005",
+   "value": 553,
+   "perCapita": 33893
+  },
+  {
+   "year": "2006",
+   "value": 587,
+   "perCapita": 35938
+  },
+  {
+   "year": "2007",
+   "value": 623,
+   "perCapita": 38017
+  },
+  {
+   "year": "2008",
+   "value": 651,
+   "perCapita": 39603
+  },
+  {
+   "year": "2009",
+   "value": 630,
+   "perCapita": 38122
+  },
+  {
+   "year": "2010",
+   "value": 643,
+   "perCapita": 38700
+  },
+  {
+   "year": "2011",
+   "value": 656,
+   "perCapita": 39299
+  },
+  {
+   "year": "2012",
+   "value": 658,
+   "perCapita": 39286
+  },
+  {
+   "year": "2013",
+   "value": 666,
+   "perCapita": 39607
+  },
+  {
+   "year": "2014",
+   "value": 679,
+   "perCapita": 40239
+  },
+  {
+   "year": "2015",
+   "value": 699,
+   "perCapita": 41274
+  },
+  {
+   "year": "2016",
+   "value": 720,
+   "perCapita": 42288
+  },
+  {
+   "year": "2017",
+   "value": 751,
+   "perCapita": 43830
+  },
+  {
+   "year": "2018",
+   "value": 787,
+   "perCapita": 45688
+  },
+  {
+   "year": "2019",
+   "value": 830,
+   "perCapita": 47839
+  },
+  {
+   "year": "2020",
+   "value": 816,
+   "perCapita": 46812
+  },
+  {
+   "year": "2021",
+   "value": 892,
+   "perCapita": 50850
+  },
+  {
+   "year": "2022",
+   "value": 994,
+   "perCapita": 56145
+  },
+  {
+   "year": "2023",
+   "value": 1050,
+   "perCapita": 58742
+  },
+  {
+   "year": "2024",
+   "value": 1122,
+   "perCapita": 62331
+  },
+  {
+   "year": "2025",
+   "value": 1179,
+   "perCapita": 65208
+  }
+ ],
+ "debt": [
+  {
+   "year": "1980",
+   "debtPercent": 43.6,
+   "debtAmount": 77
+  },
+  {
+   "year": "1981",
+   "debtPercent": 46.9,
+   "debtAmount": 87
+  },
+  {
+   "year": "1982",
+   "debtPercent": 52.4,
+   "debtAmount": 101
+  },
+  {
+   "year": "1983",
+   "debtPercent": 58.4,
+   "debtAmount": 116
+  },
+  {
+   "year": "1984",
+   "debtPercent": 61.9,
+   "debtAmount": 130
+  },
+  {
+   "year": "1985",
+   "debtPercent": 67.1,
+   "debtAmount": 146
+  },
+  {
+   "year": "1986",
+   "debtPercent": 68.9,
+   "debtAmount": 154
+  },
+  {
+   "year": "1987",
+   "debtPercent": 71.3,
+   "debtAmount": 161
+  },
+  {
+   "year": "1988",
+   "debtPercent": 73.7,
+   "debtAmount": 173
+  },
+  {
+   "year": "1989",
+   "debtPercent": 73.7,
+   "debtAmount": 184
+  },
+  {
+   "year": "1990",
+   "debtPercent": 75,
+   "debtAmount": 198
+  },
+  {
+   "year": "1991",
+   "debtPercent": 74.8,
+   "debtAmount": 208
+  },
+  {
+   "year": "1992",
+   "debtPercent": 75.6,
+   "debtAmount": 219
+  },
+  {
+   "year": "1993",
+   "debtPercent": 76.7,
+   "debtAmount": 229
+  },
+  {
+   "year": "1994",
+   "debtPercent": 73.5,
+   "debtAmount": 230
+  },
+  {
+   "year": "1995",
+   "debtPercent": 73,
+   "debtAmount": 241
+  },
+  {
+   "year": "1996",
+   "debtPercent": 71.2,
+   "debtAmount": 246
+  },
+  {
+   "year": "1997",
+   "debtPercent": 65.7,
+   "debtAmount": 243
+  },
+  {
+   "year": "1998",
+   "debtPercent": 62.7,
+   "debtAmount": 247
+  },
+  {
+   "year": "1999",
+   "debtPercent": 58.6,
+   "debtAmount": 246
+  },
+  {
+   "year": "2000",
+   "debtPercent": 52.2,
+   "debtAmount": 236
+  },
+  {
+   "year": "2001",
+   "debtPercent": 49.4,
+   "debtAmount": 239
+  },
+  {
+   "year": "2002",
+   "debtPercent": 48.7,
+   "debtAmount": 245
+  },
+  {
+   "year": "2003",
+   "debtPercent": 49.8,
+   "debtAmount": 256
+  },
+  {
+   "year": "2004",
+   "debtPercent": 50.1,
+   "debtAmount": 266
+  },
+  {
+   "year": "2005",
+   "debtPercent": 49.6,
+   "debtAmount": 274
+  },
+  {
+   "year": "2006",
+   "debtPercent": 45,
+   "debtAmount": 264
+  },
+  {
+   "year": "2007",
+   "debtPercent": 42.7,
+   "debtAmount": 266
+  },
+  {
+   "year": "2008",
+   "debtPercent": 54.4,
+   "debtAmount": 354
+  },
+  {
+   "year": "2009",
+   "debtPercent": 56.3,
+   "debtAmount": 355
+  },
+  {
+   "year": "2010",
+   "debtPercent": 58.9,
+   "debtAmount": 379
+  },
+  {
+   "year": "2011",
+   "debtPercent": 61.2,
+   "debtAmount": 401
+  },
+  {
+   "year": "2012",
+   "debtPercent": 65.7,
+   "debtAmount": 432
+  },
+  {
+   "year": "2013",
+   "debtPercent": 67.2,
+   "debtAmount": 447
+  },
+  {
+   "year": "2014",
+   "debtPercent": 67.2,
+   "debtAmount": 456
+  },
+  {
+   "year": "2015",
+   "debtPercent": 63.8,
+   "debtAmount": 446
+  },
+  {
+   "year": "2016",
+   "debtPercent": 60.9,
+   "debtAmount": 438
+  },
+  {
+   "year": "2017",
+   "debtPercent": 56,
+   "debtAmount": 420
+  },
+  {
+   "year": "2018",
+   "debtPercent": 51.5,
+   "debtAmount": 406
+  },
+  {
+   "year": "2019",
+   "debtPercent": 47.6,
+   "debtAmount": 395
+  },
+  {
+   "year": "2020",
+   "debtPercent": 53.3,
+   "debtAmount": 436
+  },
+  {
+   "year": "2021",
+   "debtPercent": 50.4,
+   "debtAmount": 450
+  },
+  {
+   "year": "2022",
+   "debtPercent": 48.3,
+   "debtAmount": 480
+  },
+  {
+   "year": "2023",
+   "debtPercent": 45.1,
+   "debtAmount": 474
+  },
+  {
+   "year": "2024",
+   "debtPercent": 43.2,
+   "debtAmount": 485
+  }
+ ],
+ "migrants": [
+  {
+   "year": "1980",
+   "immigration": 112504,
+   "asylum": 1330
+  },
+  {
+   "year": "1981",
+   "immigration": 80183,
+   "asylum": 750
+  },
+  {
+   "year": "1982",
+   "immigration": 70740,
+   "asylum": 1215
+  },
+  {
+   "year": "1983",
+   "immigration": 66762,
+   "asylum": 2015
+  },
+  {
+   "year": "1984",
+   "immigration": 66907,
+   "asylum": 2605
+  },
+  {
+   "year": "1985",
+   "immigration": 79362,
+   "asylum": 5645
+  },
+  {
+   "year": "1986",
+   "immigration": 87387,
+   "asylum": 5865
+  },
+  {
+   "year": "1987",
+   "immigration": 95935,
+   "asylum": 13460
+  },
+  {
+   "year": "1988",
+   "immigration": 91238,
+   "asylum": 7485
+  },
+  {
+   "year": "1989",
+   "immigration": 98914,
+   "asylum": 13900
+  },
+  {
+   "year": "1990",
+   "immigration": 117350,
+   "asylum": 21210
+  },
+  {
+   "year": "1991",
+   "immigration": 120249,
+   "asylum": 21615
+  },
+  {
+   "year": "1992",
+   "immigration": 116926,
+   "asylum": 20345
+  },
+  {
+   "year": "1993",
+   "immigration": 119154,
+   "asylum": 35400
+  },
+  {
+   "year": "1994",
+   "immigration": 99311,
+   "asylum": 52575
+  },
+  {
+   "year": "1995",
+   "immigration": 96099,
+   "asylum": 29260
+  },
+  {
+   "year": "1996",
+   "immigration": 108749,
+   "asylum": 22855
+  },
+  {
+   "year": "1997",
+   "immigration": 109860,
+   "asylum": 34445
+  },
+  {
+   "year": "1998",
+   "immigration": 122407,
+   "asylum": 45215
+  },
+  {
+   "year": "1999",
+   "immigration": 119151,
+   "asylum": 39305
+  },
+  {
+   "year": "2000",
+   "immigration": 132850,
+   "asylum": 43560
+  },
+  {
+   "year": "2001",
+   "immigration": 133404,
+   "asylum": 32580
+  },
+  {
+   "year": "2002",
+   "immigration": 121250,
+   "asylum": 18665
+  },
+  {
+   "year": "2003",
+   "immigration": 104514,
+   "asylum": 13400
+  },
+  {
+   "year": "2004",
+   "immigration": 94019,
+   "asylum": 9780
+  },
+  {
+   "year": "2005",
+   "immigration": 92297,
+   "asylum": 12345
+  },
+  {
+   "year": "2006",
+   "immigration": 101150,
+   "asylum": 14465
+  },
+  {
+   "year": "2007",
+   "immigration": 116819,
+   "asylum": 9730
+  },
+  {
+   "year": "2008",
+   "immigration": 143516,
+   "asylum": 15275
+  },
+  {
+   "year": "2009",
+   "immigration": 146378,
+   "asylum": 16165
+  },
+  {
+   "year": "2010",
+   "immigration": 154432,
+   "asylum": 15155
+  },
+  {
+   "year": "2011",
+   "immigration": 162962,
+   "asylum": 14630
+  },
+  {
+   "year": "2012",
+   "immigration": 158374,
+   "asylum": 13170
+  },
+  {
+   "year": "2013",
+   "immigration": 164772,
+   "asylum": 16725
+  },
+  {
+   "year": "2014",
+   "immigration": 182949,
+   "asylum": 29890
+  },
+  {
+   "year": "2015",
+   "immigration": 204615,
+   "asylum": 58880
+  },
+  {
+   "year": "2016",
+   "immigration": 230739,
+   "asylum": 32840
+  },
+  {
+   "year": "2017",
+   "immigration": 234957,
+   "asylum": 32755
+  },
+  {
+   "year": "2018",
+   "immigration": 243737,
+   "asylum": 30540
+  },
+  {
+   "year": "2019",
+   "immigration": 269064,
+   "asylum": 29445
+  },
+  {
+   "year": "2020",
+   "immigration": 220853,
+   "asylum": 19180
+  },
+  {
+   "year": "2021",
+   "immigration": 252528,
+   "asylum": 36675
+  },
+  {
+   "year": "2022",
+   "immigration": 403108,
+   "asylum": 47990
+  },
+  {
+   "year": "2023",
+   "immigration": 335668,
+   "asylum": 49890
+  },
+  {
+   "year": "2024",
+   "immigration": 316305,
+   "asylum": 45640
+  },
+  {
+   "year": "2025",
+   "immigration": 308357,
+   "asylum": 42360
+  }
+ ],
+ "crime": [
+  {
+   "year": "1980",
+   "value": 54
+  },
+  {
+   "year": "1981",
+   "value": 61
+  },
+  {
+   "year": "1982",
+   "value": 69
+  },
+  {
+   "year": "1983",
+   "value": 74
+  },
+  {
+   "year": "1984",
+   "value": 81
+  },
+  {
+   "year": "1985",
+   "value": 81
+  },
+  {
+   "year": "1986",
+   "value": 81
+  },
+  {
+   "year": "1987",
+   "value": 83
+  },
+  {
+   "year": "1988",
+   "value": 84
+  },
+  {
+   "year": "1989",
+   "value": 84
+  },
+  {
+   "year": "1990",
+   "value": 83
+  },
+  {
+   "year": "1991",
+   "value": 85
+  },
+  {
+   "year": "1992",
+   "value": 90
+  },
+  {
+   "year": "1993",
+   "value": 90
+  },
+  {
+   "year": "1994",
+   "value": 92
+  },
+  {
+   "year": "1995",
+   "value": 85
+  },
+  {
+   "year": "1996",
+   "value": 82
+  },
+  {
+   "year": "1997",
+   "value": 84
+  },
+  {
+   "year": "1998",
+   "value": 85
+  },
+  {
+   "year": "1999",
+   "value": 89
+  },
+  {
+   "year": "2000",
+   "value": 90
+  },
+  {
+   "year": "2001",
+   "value": 93
+  },
+  {
+   "year": "2002",
+   "value": 93
+  },
+  {
+   "year": "2003",
+   "value": 91
+  },
+  {
+   "year": "2004",
+   "value": 87
+  },
+  {
+   "year": "2005",
+   "value": 83
+  },
+  {
+   "year": "2006",
+   "value": 80
+  },
+  {
+   "year": "2007",
+   "value": 80
+  },
+  {
+   "year": "2008",
+   "value": 78
+  },
+  {
+   "year": "2009",
+   "value": 76
+  },
+  {
+   "year": "2010",
+   "value": 72
+  },
+  {
+   "year": "2011",
+   "value": 72
+  },
+  {
+   "year": "2012",
+   "value": 69
+  },
+  {
+   "year": "2013",
+   "value": 66
+  },
+  {
+   "year": "2014",
+   "value": 61
+  },
+  {
+   "year": "2015",
+   "value": 58
+  },
+  {
+   "year": "2016",
+   "value": 55
+  },
+  {
+   "year": "2017",
+   "value": 49
+  },
+  {
+   "year": "2018",
+   "value": 46
+  },
+  {
+   "year": "2019",
+   "value": 48
+  },
+  {
+   "year": "2020",
+   "value": 47
+  },
+  {
+   "year": "2021",
+   "value": 43
+  },
+  {
+   "year": "2022",
+   "value": 46
+  },
+  {
+   "year": "2023",
+   "value": 46
+  },
+  {
+   "year": "2024",
+   "value": 45
+  },
+  {
+   "year": "2025",
+   "value": 45
+  }
+ ],
+ "housing": [
+  {
+   "year": "1980",
+   "ratio": null,
+   "price": null
+  },
+  {
+   "year": "1981",
+   "ratio": null,
+   "price": null
+  },
+  {
+   "year": "1982",
+   "ratio": null,
+   "price": null
+  },
+  {
+   "year": "1983",
+   "ratio": null,
+   "price": null
+  },
+  {
+   "year": "1984",
+   "ratio": null,
+   "price": null
+  },
+  {
+   "year": "1985",
+   "ratio": null,
+   "price": null
+  },
+  {
+   "year": "1986",
+   "ratio": null,
+   "price": null
+  },
+  {
+   "year": "1987",
+   "ratio": null,
+   "price": null
+  },
+  {
+   "year": "1988",
+   "ratio": null,
+   "price": null
+  },
+  {
+   "year": "1989",
+   "ratio": null,
+   "price": null
+  },
+  {
+   "year": "1990",
+   "ratio": null,
+   "price": null
+  },
+  {
+   "year": "1991",
+   "ratio": null,
+   "price": null
+  },
+  {
+   "year": "1992",
+   "ratio": null,
+   "price": null
+  },
+  {
+   "year": "1993",
+   "ratio": null,
+   "price": null
+  },
+  {
+   "year": "1994",
+   "ratio": null,
+   "price": null
+  },
+  {
+   "year": "1995",
+   "ratio": null,
+   "price": 93750
+  },
+  {
+   "year": "1996",
+   "ratio": null,
+   "price": 102607
+  },
+  {
+   "year": "1997",
+   "ratio": null,
+   "price": 113163
+  },
+  {
+   "year": "1998",
+   "ratio": null,
+   "price": 124540
+  },
+  {
+   "year": "1999",
+   "ratio": null,
+   "price": 144778
+  },
+  {
+   "year": "2000",
+   "ratio": null,
+   "price": 172050
+  },
+  {
+   "year": "2001",
+   "ratio": null,
+   "price": 188397
+  },
+  {
+   "year": "2002",
+   "ratio": null,
+   "price": 199752
+  },
+  {
+   "year": "2003",
+   "ratio": null,
+   "price": 204829
+  },
+  {
+   "year": "2004",
+   "ratio": null,
+   "price": 212723
+  },
+  {
+   "year": "2005",
+   "ratio": null,
+   "price": 222706
+  },
+  {
+   "year": "2006",
+   "ratio": null,
+   "price": 235843
+  },
+  {
+   "year": "2007",
+   "ratio": null,
+   "price": 248325
+  },
+  {
+   "year": "2008",
+   "ratio": null,
+   "price": 254918
+  },
+  {
+   "year": "2009",
+   "ratio": null,
+   "price": 238259
+  },
+  {
+   "year": "2010",
+   "ratio": null,
+   "price": 239530
+  },
+  {
+   "year": "2011",
+   "ratio": 7.82,
+   "price": 240059
+  },
+  {
+   "year": "2012",
+   "ratio": 7.29,
+   "price": 226661
+  },
+  {
+   "year": "2013",
+   "ratio": 6.77,
+   "price": 213353
+  },
+  {
+   "year": "2014",
+   "ratio": 6.94,
+   "price": 222218
+  },
+  {
+   "year": "2015",
+   "ratio": 7.08,
+   "price": 230194
+  },
+  {
+   "year": "2016",
+   "ratio": 7.43,
+   "price": 243837
+  },
+  {
+   "year": "2017",
+   "ratio": 7.93,
+   "price": 263295
+  },
+  {
+   "year": "2018",
+   "ratio": 8.5,
+   "price": 287267
+  },
+  {
+   "year": "2019",
+   "ratio": 8.88,
+   "price": 307978
+  },
+  {
+   "year": "2020",
+   "ratio": 9.24,
+   "price": 334488
+  },
+  {
+   "year": "2021",
+   "ratio": 10.45,
+   "price": 386714
+  },
+  {
+   "year": "2022",
+   "ratio": 10.99,
+   "price": 428591
+  },
+  {
+   "year": "2023",
+   "ratio": 10.03,
+   "price": 416153
+  },
+  {
+   "year": "2024",
+   "ratio": 10.23,
+   "price": 450985
+  },
+  {
+   "year": "2025",
+   "ratio": null,
+   "price": 479527
+  }
+ ]
+}

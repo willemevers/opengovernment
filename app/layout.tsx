@@ -6,13 +6,24 @@ import "./globals.css"
 
 const _inter = Inter({ subsets: ["latin"] })
 
+const description = "Hoe goed doen we het eigenlijk? Economie, staatsschuld, migratie, veiligheid en wonen in Nederland, in heldere grafieken met officiële cijfers."
+
 export const metadata: Metadata = {
-  title: "Overheids Dashboard",
-  description: "Dashboard voor het volgen van Nederlandse overheidsprestaties en statistieken",
-  generator: "v0.app",
+  metadataBase: new URL("https://overheidsdashboard.nl"),
+  title: "Nederlandse Overheid Dashboard",
+  description,
   icons: {
     icon: "/favicon.png",
   },
+  openGraph: {
+    title: "Nederlandse Overheid Dashboard",
+    description,
+    url: "/",
+    siteName: "Overheidsdashboard",
+    locale: "nl_NL",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image", title: "Nederlandse Overheid Dashboard", description },
 }
 
 export default function RootLayout({
@@ -21,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="nl">
       <body className={`font-sans antialiased ${_inter.className}`}>
         {children}
         <Analytics />
