@@ -1,7 +1,10 @@
 "use client"
 
 import { useId } from "react"
-import { Area, AreaChart, CartesianGrid, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
+import { Area, AreaChart, CartesianGrid, Line, ReferenceArea, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
+
+// "Maximaal" always starts here, so every chart shares the same time axis.
+const START_YEAR = 1980
 
 export type Row = { year: string; [key: string]: string | number | null }
 
@@ -40,9 +43,18 @@ const pct = new Intl.NumberFormat("nl-NL", { style: "percent", maximumFractionDi
 export function TrendCard({ title, description, data: allData, series, unit, source, range }: Props) {
   const gradientId = useId()
   const [main] = series
-  // Only years where at least one series has data, optionally cut to the last 10 of those.
-  const withData = allData.filter((r) => series.some((s) => r[s.key] != null))
-  const data = range === "10" ? withData.slice(-10) : withData
+  // Every year in the range gets a row; years without data stay empty so gaps are visible.
+  const hasData = (r: Row) => series.some((s) => r[s.key] != null)
+  const dataYears = allData.filter(hasData).map((r) => Number(r.year))
+  const lastYear = Math.max(...dataYears)
+  const fromYear = range === "10" ? lastYear - 9 : Math.min(START_YEAR, ...dataYears)
+  const byYear = new Map(allData.map((r) => [r.year, r]))
+  const data: Row[] = Array.from({ length: lastYear - fromYear + 1 }, (_, i) => {
+    const year = String(fromYear + i)
+    return byYear.get(year) ?? { year }
+  })
+  const firstDataYear = data.find(hasData)?.year
+  const missingTo = firstDataYear && firstDataYear !== data[0].year ? String(Number(firstDataYear) - 1) : null
   const latest = lastValue(data, main.key)
   const first = firstValue(data, main.key)
   const years = [data[0].year, data[data.length - 1].year]
@@ -75,6 +87,18 @@ export function TrendCard({ title, description, data: allData, series, unit, sou
               </linearGradient>
             </defs>
             <CartesianGrid vertical={false} stroke="var(--border)" strokeDasharray="2 4" />
+            {missingTo && (
+              <ReferenceArea
+                yAxisId={0}
+                x1={data[0].year}
+                x2={missingTo}
+                fill="var(--muted)"
+                fillOpacity={0.6}
+                stroke="none"
+                ifOverflow="extendDomain"
+                label={{ value: "Geen cijfers", position: "center", fontSize: 12, fill: "var(--muted-foreground)" }}
+              />
+            )}
             <XAxis
               dataKey="year"
               ticks={years}
